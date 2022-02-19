@@ -103,7 +103,7 @@ function draw(){
       som_pontos.play();
     }
     //pulo do trex
-    if (keyDown("space") || touches > 0 && trex.y > height - 80) {
+    if ((keyDown("space") || touches.length > 0) && trex.y > height - 80) {
       trex.velocityY = -10;
       som_pulo.play();
       touches = [];
@@ -149,14 +149,14 @@ function draw(){
   //text(frameCount,300,150);
 
   //fazendo a pontução e os recordes
-  text("Pontuação: " + pontos,width - 599,height - 175);
-  text("Recordes: " + recordes,width - 599,height - 163);
+  text("Pontuação: " + pontos,1,height - 175);
+  text("Recordes: " + recordes,1,height - 163);
 
   gravity();
 
   trex.collide(bloco);
 
-  //console.log (trex.y);
+  console.log (trex.y);
 
   //coordenadas do mouse na tela
   text("X: "+mouseX+" / Y: "+mouseY,mouseX,mouseY)
